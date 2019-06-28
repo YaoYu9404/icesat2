@@ -1,4 +1,4 @@
-%% main 4 reading
+%% main 4 ATL03 photon heights
 
 FILE_NAME = 'ATL03_20181027235521_04480111_001_01.h5';
 [track1, track2, track3] = ATL03_read(FILE_NAME);
