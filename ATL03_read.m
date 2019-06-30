@@ -31,6 +31,8 @@ title(tstring,...
 axesm('MapProjection','eqdcylin','Frame','on','Grid','on', ...
       'MeridianLabel','on','ParallelLabel','on','MLabelParallel','south')
 
+ind = floor(linspace(1,size(lon,1),10000));
+
 scatterm(lat, lon, 1, temp);
 h = colorbar();
 units_str = sprintf('%s', char(units_temp));
