@@ -33,7 +33,8 @@ title(tstring,...
 axesm('MapProjection','eqdcylin','Frame','on','Grid','on', ...
       'MeridianLabel','on','ParallelLabel','on','MLabelParallel','south')
 
-scatterm(lat, lon, 1, height);
+ind = linspace(size(lon),10000);
+scatterm(lat(ind), lon(ind), 1, height(ind));
 h = colorbar();
 units_str = sprintf('%s', char(units_temp));
 set (get(h, 'title'), 'string', units_str, 'FontSize', 8, ...
