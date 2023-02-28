@@ -41,9 +41,11 @@ ATL03_sub2;
 
 %% return only signals
 conf_ocean = conf(2,:)'; clear conf;
-ind = find(conf_ocean>2);  
+ind = find(conf_ocean>-1);  
+% ind = find(conf_ocean>2); 
 ph_lat = lat(ind);
 ph_lon = lon(ind);
+ph_time = time10k(ind);
 ph_height = height(ind);
 ph_height_corrected = height(ind) - correction(ind);
 
@@ -58,11 +60,12 @@ attr_id = H5A.open_name (height_id, ATTRIBUTE);
 long_name_temp = H5A.read(attr_id, 'H5ML_DEFAULT');
 
 %% Close and release resources.
-H5A.close (attr_id)
-H5D.close (height_id);
-H5D.close (lon_id);
-H5D.close (lat_id);
-H5D.close (confidence_id);
+H5A.close(attr_id)
+H5D.close(height_id);
+H5D.close(lon_id);
+H5D.close(lat_id);
+H5D.close(confidence_id);
+H5D.close(time10k_id);
 
 
 

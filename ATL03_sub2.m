@@ -69,7 +69,9 @@ corr_dac = interp1(new_time, new_dac, time10k,'spline');
 clear ind_dac new_dac new_time
 
 
-correction = corr_geoid + corr_oceantide + corr_dac;
+% correction = corr_geoid + corr_oceantide + corr_dac;
+correction = corr_oceantide + corr_dac;
+
 clear geoid oceantide dac time500
 clear corr_geoid corr_oceantide corr_dac
 
